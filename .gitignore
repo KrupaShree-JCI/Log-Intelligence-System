@@ -1,0 +1,41 @@
+# =========================
+# Angular / Frontend
+# =========================
+node_modules/
+.angular/
+dist/
+coverage/
+ 
+# =========================
+# .NET / Backend
+# =========================
+bin/
+obj/
+ 
+# =========================
+# Visual Studio
+# =========================
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+ 
+# =========================
+# Environment / Secrets
+# =========================
+appsettings.json
+appsettings.Development.json
+.env
+ 
+# =========================
+# Logs
+# =========================
+*.log
+ 
+# =========================
+# OS Files
+# =========================
+.DS_Store
+Thumbs.db
+ 

@@ -1,0 +1,39 @@
+<div *ngIf="loading" class="loading">
+  <div class="spinner"></div>
+  <p>Loading insights...</p>
+</div>
+ 
+<!-- ACCESS -->
+<div *ngIf="!loading && canViewAI">
+ 
+  <!-- SYSTEM SUMMARY -->
+  <app-system-summary [data]="data"></app-system-summary>
+ 
+</div>
+ 
+
+<!-- ROW -->
+<div *ngIf="!loading && canViewAI" class="insights-row">
+ 
+  <!-- LEFT CARD -->
+  <div class="half">
+  
+    <app-error-distribution [data]="data"></app-error-distribution>
+  </div>
+ 
+  <!-- RIGHT CARD -->
+  <div class="half">
+    <app-risk-assessment [data]="data"></app-risk-assessment>
+  </div>
+ 
+</div>
+
+
+
+<div *ngIf="!loading && canViewAI"><app-analysis-reasons [data]="data"></app-analysis-reasons></div>
+
+<div *ngIf="!loading && canViewAI"><app-recommendations [data]="data"></app-recommendations></div>
+<!-- NO ACCESS -->
+<div *ngIf="!loading && !canViewAI" class="no-access">
+  You do not have access to AI Insights
+</div>

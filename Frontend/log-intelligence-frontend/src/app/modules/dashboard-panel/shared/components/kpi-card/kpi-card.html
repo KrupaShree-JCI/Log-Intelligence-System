@@ -1,0 +1,18 @@
+<div class="kpi-card" [ngClass]="statusClass">
+ 
+  <div class="kpi-title">
+    {{ title }}
+  </div>
+ 
+  <div class="kpi-value">
+    {{ value }}
+  </div>
+ 
+  <div class="kpi-subtext">
+    <span class="trend-icon" [ngClass]="status">
+      {{ status === 'good' ? '▲' : '▼' }}
+    </span>
+    {{ subText }}
+  </div>
+ 
+</div>

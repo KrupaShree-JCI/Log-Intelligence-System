@@ -1,0 +1,31 @@
+<div class="error-card">
+ 
+ 
+  <div class="card-title">
+    SERVICE ERROR DISTRIBUTION
+  </div>
+ 
+  
+  <div class="error-list">
+ 
+    <div
+      class="error-item"
+      *ngFor="let item of data.derivedMetrics.errorDistributionByService | keyvalue">
+ 
+      
+      <span class="service-name">
+        {{ formatServiceName(item.key) }}
+      </span>
+ 
+  
+      <span
+        class="value"
+        [ngClass]="getSeverityClass(item.value)">
+        {{ item.value | number:'1.0-2' }}%
+      </span>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>

@@ -1,0 +1,72 @@
+<div class="app">
+ 
+ 
+  <aside class="sidebar">
+    <div class="logo">
+      <div class="logo-mark">Log<span>IQ</span></div>
+      <div class="logo-sub">//e-commerce intelligence</div>
+    </div>
+ 
+    <nav class="nav">
+ 
+      <div class="nav-section">Monitor</div>
+ 
+      <a class="nav-item" [routerLink]="['/app/dashboard']" routerLinkActive="active">
+        <span class="nav-icon">□</span> Dashboard
+      </a>
+ 
+      <a class="nav-item" [routerLink]="['/app/logs']" routerLinkActive="active">
+        <span class="nav-icon">≡</span> Log Viewer
+      </a>
+ 
+      <a class="nav-item" [routerLink]="['/app/insights']" routerLinkActive="active">
+        <span class="nav-icon">◉</span> AI Insights
+      </a>
+ 
+      <div class="nav-section">System</div>
+ 
+      <a class="nav-item" [routerLink]="['/upload']" routerLinkActive="active">
+        <span class="nav-icon">↑</span> Upload Logs
+      </a>
+ 
+      <a class="nav-item" (click)="logout()">
+        <span class="nav-icon">⎋</span> Logout
+      </a>
+ 
+    </nav>
+    
+  </aside>
+ 
+  
+  <div class="main">
+ 
+   
+    <div class="topbar">
+ 
+    
+      <div class="topbar-left">
+        <span class="app-name">LOG INTELLIGENCE SYSTEM   </span>
+        <span class="separator">//  </span>
+        <span class="page-title">{{ pageTitle }}</span>
+      </div>
+ 
+     
+      <div class="topbar-right">
+        <div class="user-box">
+          <div class="user-avatar">
+            {{ username.charAt(0).toUpperCase() }}
+          </div>
+          <span class="username">{{ username }}</span>
+        </div>
+      </div>
+ 
+    </div>
+ 
+   
+    <div class="content">
+      <router-outlet></router-outlet>
+    </div>
+ 
+  </div>
+ 
+</div>

@@ -1,0 +1,64 @@
+.recommendations-container {
+  margin-top: 24px;
+}
+ 
+/* TITLE */
+.section-title {
+  font-size: 12px;
+  color: #9ca3af;
+  letter-spacing: 2px;
+  margin-bottom: 12px;
+}
+ 
+/* LIST */
+.recommendation-list {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+ 
+/* CARD */
+.recommendation-card {
+  position: relative;
+  display: flex;
+  align-items: flex-start;
+  gap: 14px;
+  background: #0b1220;
+  border: 1px solid #1f2937;
+  border-radius: 10px;
+  padding: 14px 16px 14px 24px;
+}
+ 
+/* LEFT ACCENT (BLUE) */
+.recommendation-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 10px;
+  bottom: 10px;
+  width: 4px;
+  border-radius: 4px;
+  background: linear-gradient(180deg, #06b6d4, #3b82f6);
+}
+ 
+/* NUMBER BADGE */
+.number {
+  min-width: 28px;
+  height: 28px;
+  border-radius: 50%;
+  background: #0ea5e9;
+  color: white;
+  font-size: 13px;
+  font-weight: 600;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+ 
+/* TEXT */
+.text {
+  color: #e5e7eb;
+  font-size: 14px;
+  line-height: 1.5;
+}
+ 

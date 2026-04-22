@@ -1,0 +1,96 @@
+<div class="dashboard-container">
+ 
+ 
+  <div class="section-header">
+    <h2>KEY PERFORMANCE INDICATORS</h2>
+  </div>
+ 
+  <div class="kpi-row" *ngIf="kpis && hasKpiAccess">
+ 
+    <app-kpi-card
+      title="Total Orders"
+      [value]="kpis.totalOrders"
+      subText="Orders processed">
+    </app-kpi-card>
+ 
+    <app-kpi-card
+      title="Failure Rate"
+      [value]="kpis.failureRate + '%'"
+      subText="Failures detected"
+      [status]="getStatus('failureRate', kpis.failureRate)">
+    </app-kpi-card>
+ 
+    <app-kpi-card
+      title="Error Rate"
+      [value]="kpis.errorRate + '%'"
+      subText="System errors"
+      [status]="getStatus('errorRate', kpis.errorRate)">
+    </app-kpi-card>
+ 
+    <app-kpi-card
+      title="Avg Response"
+      [value]="kpis.avgResponseTime + ' ms'"
+      subText="Latency"
+      [status]="getStatus('avgResponseTime', kpis.avgResponseTime)">
+    </app-kpi-card>
+ 
+    <app-kpi-card
+      title="Risk Score"
+      [value]="kpis.riskScore + '/100'"
+      [subText]="kpis.riskLevel"
+      [status]="getStatus('riskScore', kpis.riskScore)">
+    </app-kpi-card>
+ 
+  </div>
+ 
+  
+  <div class="section-header">
+    <h2>CHARTS & ANALYTICS</h2>
+  </div>
+ 
+ 
+  <div *ngIf="hasChartAccess; else noAccessBlock" class="charts-grid">
+ 
+    <div class="chart-card">
+      <h3>Error Rate Over Time</h3>
+      <app-error-line-chart
+        [data]="errorTrendData">
+      </app-error-line-chart>
+    </div>
+ 
+    
+    <div class="chart-card">
+      <h3>Logs by Severity</h3>
+      <app-severity-pie-chart>
+      </app-severity-pie-chart>
+    </div>
+ 
+
+    <div class="chart-card">
+      <h3>Top Errors</h3>
+      <app-top-errors-bar-chart
+        *ngIf="topErrorData && topErrorData.length > 0"
+        [data]="topErrorData">
+      </app-top-errors-bar-chart>
+    </div>
+ 
+
+    <div class="chart-card">
+      <h3>Orders vs Failures</h3>
+      <app-order-line-chart
+        *ngIf="orderTrendData && orderTrendData.length > 0"
+        [data]="orderTrendData">
+      </app-order-line-chart>
+    </div>
+ 
+  </div>
+ 
+
+  <ng-template #noAccessBlock>
+    <div class="no-access">
+       You do not have access to KPI and CHARTS
+    </div>
+  </ng-template>
+ 
+</div>
+ 

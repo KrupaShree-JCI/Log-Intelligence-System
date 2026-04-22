@@ -1,0 +1,89 @@
+.dashboard-container {
+  background: #020617;
+  min-height: 100vh;
+  padding: 20px;
+  color: white;
+}
+ 
+
+.section-header {
+  margin: 20px 0 10px;
+}
+ 
+.section-header h2 {
+  font-size: 12px;
+  letter-spacing: 2px;
+  color: #64748b;
+}
+ 
+
+.kpi-row {
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  gap: 16px;
+  margin-bottom: 20px;
+}
+ 
+
+.charts-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+ 
+}
+ 
+
+.chart-card {
+  background: linear-gradient(145deg, #020617, #0f172a);
+  border: 1px solid #1e293b;
+  border-radius: 14px;
+  padding: 16px;
+  height: 250x;
+ 
+  display: flex;
+  flex-direction: column;
+ 
+  transition: 0.3s;
+}
+ 
+.chart-card:hover {
+  border-color: #38bdf8;
+}
+
+.chart-card h3 {
+  font-size: 14px;
+  margin-bottom: 10px;
+  color: #cbd5f5;
+}
+ 
+
+.chart-card app-error-line-chart,
+.chart-card app-severity-pie-chart,
+.chart-card app-order-line-chart,
+.chart-card app-top-errors-bar-chart {
+  flex: 1;
+  display: block;
+}
+ 
+
+@media (max-width: 1000px) {
+  .kpi-row {
+    grid-template-columns: repeat(2, 1fr);
+  }
+ 
+  .charts-grid {
+    grid-template-columns: 1fr;
+  }
+}
+ 
+.no-access {
+  text-align: center;
+  padding: 40px;
+  margin-top: 20px;
+  color: #94a3b8;
+ 
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+ 

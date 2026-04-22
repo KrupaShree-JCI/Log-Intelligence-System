@@ -1,0 +1,122 @@
+<div class="log-container">
+ 
+  
+  <div class="log-header">
+    <h2>Live Log Viewer</h2>
+  </div>
+ 
+  
+  <div *ngIf="!hasAccess" class="no-access">
+     You do not have access to view logs
+  </div>
+
+  <div *ngIf="hasAccess">
+ 
+    
+    <div class="filters">
+ 
+    
+      <select [(ngModel)]="selectedLevel" (change)="fetchLogs()">
+        <option value="">All Levels</option>
+        <option value="INFO">INFO</option>
+        <option value="WARN">WARN</option>
+        <option value="ERROR">ERROR</option>
+      </select>
+ 
+  
+      <select [(ngModel)]="selectedService" (change)="fetchLogs()">
+        <option value="">All Services</option>
+        <option *ngFor="let s of services" [value]="s">
+          {{ s }}
+        </option>
+      </select>
+ 
+    
+      <input
+        type="text"
+        placeholder="Search event..."
+        [(ngModel)]="searchText"
+        (input)="applySearch()"
+      />
+ 
+    </div>
+ 
+   
+    <div class="table-wrapper">
+ 
+      <table>
+ 
+        
+        <thead>
+          <tr>
+            <th>Time</th>
+            <th>Level</th>
+            <th>Service</th>
+            <th>Event</th>
+            <th>Order</th>
+            <th>User</th>
+            <th>Amount</th>
+            <th>Status</th>
+            <th>Response</th>
+            <th>Error</th>
+          </tr>
+        </thead>
+ 
+        
+        <tbody>
+ 
+          <tr *ngFor="let log of filteredLogs"
+              [class.error-row]="log.level === 'ERROR'"
+              [class.warn-row]="log.level === 'WARN'">
+ 
+           
+            <td>{{ log.timestamp | date:'short' }}</td>
+ 
+          
+            <td>
+              <span class="badge" [ngClass]="log.level.toLowerCase()">
+                {{ log.level }}
+              </span>
+            </td>
+ 
+          
+            <td>{{ log.service }}</td>
+ 
+        
+            <td class="event">{{ log.event }}</td>
+ 
+          
+            <td>{{ log.orderId || '-' }}</td>
+ 
+            
+            <td>{{ log.userId || '-' }}</td>
+ 
+            
+            <td>{{ log.amount ? ('₹' + log.amount) : '-' }}</td>
+ 
+            
+            <td>
+              <span class="status" [ngClass]="log.status?.toLowerCase()">
+                {{ log.status }}
+              </span>
+            </td>
+ 
+           
+            <td>{{ log.responseTime }} ms</td>
+ 
+          
+            <td class="error-text" title="{{ log.errorMessage }}">
+              {{ log.errorMessage || '-' }}
+            </td>
+ 
+          </tr>
+ 
+        </tbody>
+ 
+      </table>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>

@@ -1,0 +1,42 @@
+<div class="upload-container">
+ 
+  
+  <div class="grid"></div>
+  <div class="orb orb1"></div>
+  <div class="orb orb2"></div>
+ 
+ 
+  <div class="upload-card">
+ 
+    <h1 class="title">
+      Upload <span class="gradient">Logs</span>
+    </h1>
+ 
+    <p class="subtitle">
+      Upload JSON log files for analysis
+    </p>
+ 
+    
+    <div class="file-box" (click)="fileInput.click()">
+      <input #fileInput type="file" accept=".json" (change)="onFileChange($event)" hidden />
+ 
+      <p *ngIf="!selectedFile"> Click to select JSON file</p>
+      <p *ngIf="selectedFile">{{ selectedFile.name }}</p>
+    </div>
+ 
+  
+    <p class="warning">
+      ⚠ Only JSON files are allowed
+    </p>
+ 
+   
+    <button class="upload-btn" (click)="upload()" [disabled]="loading">
+      <span *ngIf="!loading">Upload</span>
+ 
+      <span *ngIf="loading" class="loader"></span>
+      <span *ngIf="loading">Uploading...</span>
+    </button>
+ 
+  </div>
+ 
+</div>

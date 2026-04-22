@@ -1,0 +1,29 @@
+<div class="recommendations-container">
+ 
+  
+  <div class="section-title">
+    AI-GENERATED SUGGESTIONS
+  </div>
+ 
+ 
+  <div class="recommendation-list">
+ 
+    <div
+      class="recommendation-card"
+      *ngFor="let suggestion of data.suggestions; let i = index">
+ 
+     
+      <div class="number">
+        {{ i + 1 }}
+      </div>
+ 
+  
+      <div class="text">
+        {{ suggestion }}
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>

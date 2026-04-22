@@ -1,0 +1,22 @@
+<div class="risk-card">
+ 
+  <!-- TITLE -->
+  <div class="card-title">RISK ASSESSMENT</div>
+ 
+  <!-- SCORE -->
+  <div class="risk-score">
+    {{ riskScore | number:'1.0-2' }}
+    <span>/100</span>
+  </div>
+ 
+  <!-- BADGE -->
+  <div class="risk-badge">
+    ✔ {{ riskLevel | uppercase }} RISK
+  </div>
+ 
+  <!-- PROGRESS BAR -->
+  <div class="progress-container">
+    <div class="progress-bar" [style.width]="progressWidth"></div>
+  </div>
+ 
+</div>

@@ -1,0 +1,89 @@
+.log-container {
+  padding: 20px;
+  color: #e5e7eb;
+}
+ 
+.log-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+ 
+.role-badge {
+  background: #1f2937;
+  padding: 5px 10px;
+  border-radius: 6px;
+  font-size: 12px;
+}
+ 
+.filters {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+ 
+.filters select,
+.filters input {
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  background: #1f2937;
+  color: white;
+}
+ 
+.table-wrapper {
+  overflow-x: auto;
+}
+ 
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+ 
+th, td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #374151;
+}
+ 
+.badge {
+  padding: 4px 8px;
+  border-radius: 4px;
+  font-size: 12px;
+}
+ 
+.badge.info { background: #2563eb; }
+.badge.warn { background: #f59e0b; }
+.badge.error { background: #ef4444; }
+ 
+.status.success { color: #22c55e; }
+.status.failed { color: #ef4444; }
+.status.warning { color: #f59e0b; }
+ 
+.error-text {
+  max-width: 250px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  color: #f87171;
+}
+ 
+.error-row {
+  background: rgba(239, 68, 68, 0.1);
+}
+ 
+.warn-row {
+  background: rgba(245, 158, 11, 0.1);
+}
+ 
+.no-access {
+  text-align: center;
+  padding: 40px;
+  margin-top: 20px;
+  color: #94a3b8;
+ 
+  background: linear-gradient(145deg, #0f172a, #020617);
+  border-radius: 12px;
+  border: 1px solid #1e293b;
+}
+ 

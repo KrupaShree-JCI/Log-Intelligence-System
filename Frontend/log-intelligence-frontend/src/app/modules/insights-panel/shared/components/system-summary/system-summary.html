@@ -1,0 +1,77 @@
+<div class="system-summary-container">
+ 
+ 
+  <div class="section-title">SYSTEM SUMMARY</div>
+ 
+
+  <div class="summary-card">
+ 
+   
+    <div class="summary-header">
+ 
+      <div>
+        <div class="analysis-label">CURRENT ANALYSIS</div>
+ 
+        
+        <div class="summary-text">
+          {{ data.summary }}
+        </div>
+      </div>
+ 
+      
+      <div class="phase-badge">
+        ⚠ {{ data.systemPhase | uppercase }}
+      </div>
+ 
+    </div>
+ 
+   
+    <div class="summary-tags">
+ 
+  
+      <div class="tag">
+        <span class="dot orange"></span>
+        Root Cause <b>{{ data.rootCause }}</b>
+      </div>
+ 
+    
+      <div class="tag">
+        <span class="dot red"></span>
+        Phase <b>{{ data.systemPhase }}</b>
+      </div>
+ 
+     
+      <div class="tag" *ngIf="data.derivedMetrics.trend">
+        <span class="dot blue"></span>
+        Trend <b>{{ data.derivedMetrics.trend }}</b>
+      </div>
+ 
+
+      <div class="tag" *ngIf="data.risk.riskLevel">
+        <span class="dot green"></span>
+        Risk Level <b>{{ data.risk.riskLevel }}</b>
+      </div>
+ 
+
+      <div class="tag" *ngIf="data.derivedMetrics.impactScore !== undefined">
+        <span class="dot orange"></span>
+        Impact <b>{{ data.derivedMetrics.impactScore | number:'1.2-2' }}</b>
+      </div>
+ 
+ 
+      <div class="tag" *ngIf="data.derivedMetrics.dominantService">
+        <span class="dot purple"></span>
+        Service <b>{{ data.derivedMetrics.dominantService }}</b>
+      </div>
+ 
+ 
+      <div class="tag" *ngIf="data.derivedMetrics.errorType">
+        <span class="dot pink"></span>
+        Error <b>{{ data.derivedMetrics.errorType }}</b>
+      </div>
+ 
+    </div>
+ 
+  </div>
+ 
+</div>
