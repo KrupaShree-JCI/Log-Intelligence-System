@@ -1,21 +1,22 @@
 ﻿#  Log Intelligence Dashboard
  
-A full-stack **Log Intelligence Dashboard** for an e-commerce system that combines **system monitoring, business KPIs, and AI-driven insights**.
+A full-stack **Log Intelligence Dashboard** for an e-commerce system that combines **system monitoring, business KPIs, and AI-powered insights**.
  
+---
  
 ##  Features
  
-###  Role-Based Access Control
+### Role-Based Access Control
  
 | Role               | Access                                           |
 | ------------------ | ------------------------------------------------ |
 | **Primary User**   | Upload logs, KPIs, charts, AI insights, raw logs |
 | **Analytics User** | Upload logs, KPIs, charts, AI insights           |
-| **Log Viewer**     | Upload logs, raw logs only                       |
+| **Log Viewer**     | View raw logs only                               |
  
 ---
  
-##  Log Ingestion
+## Log Ingestion
  
 * Upload structured **JSON log files**
 * Logs represent e-commerce events:
@@ -39,33 +40,30 @@ A full-stack **Log Intelligence Dashboard** for an e-commerce system that combin
  
 ##  Visualizations
  
-* 📉 Error Rate Over Time (Line Chart)
-* 🥧 Logs by Severity (Pie Chart)
-* 📊 Orders/Traffic Over Time
-* 📌 Top Errors (Bar Chart)
+* Error Rate Over Time (Line Chart)
+* Logs by Severity (Pie Chart)
+* Orders/Traffic Over Time
+* Top Errors (Bar Chart)
  
 ---
  
-##  Live Log Viewer
+## Live Log Viewer
  
 * View raw logs in real-time
 * Filters:
  
   * Severity (INFO / WARN / ERROR)
-  * Service
   * Time range
+  * Search keywords
  
 ---
  
-##  AI Insights Module
- 
-Analyzes logs to generate:
+##  AI Insights
  
 * Incident Summary
 * Risk Level (Low / Medium / High)
 * Recommended Actions
  
-
 ---
  
 ##  Backend Architecture
@@ -78,11 +76,7 @@ Analyzes logs to generate:
  
 ---
  
-
- 
-
- 
-##  Tech Stack
+## Tech Stack
  
 * Angular (Frontend UI)
 * ASP.NET Core Web API
@@ -93,19 +87,48 @@ Analyzes logs to generate:
  
 ---
  
-## ▶️ Running the Project
+##  Run the Project
  
 ### Backend
  
 ```bash
-cd backend
+cd Backend
 dotnet run
 ```
  
 ### Frontend
  
 ```bash
-cd frontend
+cd Frontend
 npm install
 ng serve
 ```
+ 
+---
+ 
+##  Screenshots
+ 
+###  Home Page
+ 
+![Home Page](screenshots/HomePage.png)
+ 
+### KPIs Dashboard
+ 
+![KPI](screenshots/KPI.png)
+ 
+###  Charts & Analytics
+ 
+![Charts](screenshots/Charts.png)
+ 
+###  AI Insights
+ 
+![Insights](screenshots/Insights.png)
+ 
+###  Upload Logs
+ 
+![Upload](screenshots/UploadPage.png)
+ 
+###  Live Log Viewer
+ 
+![Live Logs](screenshots/Livelogviewer.png)
+ 
